@@ -51,31 +51,49 @@ public class FreshWorksTest {
 
 		}
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		driver.get("https://www.freshworks.com/");
+		//driver.get("https://www.freshworks.com/");
+		driver.get("https://www.google.com/");
 
 	}
 
 	@Test(priority = 1)
+	/*
 	public void freshWorkslogoTest() {
 		boolean flag = false;
 			flag = driver.findElement(By.cssSelector("a.logo.logo-fworks")).isDisplayed();
 			Assert.assertTrue(flag);
 	}
-
+        */
+	public void googleTitleTest() {
+		System.out.println("Running Title Test...");
+		System.out.println(driver.getTitle());
+		assertEquals(driver.getTitle(), "Google");
+	}
+	
+	
 	@Test(priority = 2)
+	/*
 	public void freshWorksTitleTest() {
 		System.out.println("running title test...");
 		System.out.println(driver.getTitle());
 		assertEquals(driver.getTitle(), "A fresh approach to customer engagement");
 	}
+	*/
+	public void googlelogoTest() {
+		boolean flag = false;
+			flag = driver.findElement(By.cssSelector("#hplogo")).isDisplayed();
+			Assert.assertTrue(flag);
+	}
 
+        /*
 	@Test(priority = 3)
 	public void getFooterLinksTest() {
 		List<WebElement> footerLinksList = driver.findElements(By.cssSelector("ul.footer-nav li a"));
 		footerLinksList.forEach(ele -> System.out.println(ele.getText()));
 		assertEquals(footerLinksList.size(), 35);
 	}
-
+        */
+	
 	@AfterMethod
 	public void tearDown() {
 		driver.quit();
