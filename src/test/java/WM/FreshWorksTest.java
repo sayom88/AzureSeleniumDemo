@@ -67,8 +67,8 @@ public class FreshWorksTest {
 	public void googleTitleTest() {
 		System.out.println("Running Title Test...");
 		System.out.println(driver.getTitle());
-		//assertEquals(driver.getTitle(), "Google");
-		assertEquals(driver.getTitle(), "Google1");
+		assertEquals(driver.getTitle(), "Google");
+		//assertEquals(driver.getTitle(), "Google1");
 	}
 	
 	
