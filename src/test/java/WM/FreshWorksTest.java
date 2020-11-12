@@ -52,7 +52,8 @@ public class FreshWorksTest {
 		}
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		//driver.get("https://www.freshworks.com/");
-		driver.get("https://www.google.com/");
+		//driver.get("https://www.google.com/");
+		driver.get("https://webappevopsdemo.azurewebsites.net/");
 
 	}
 
@@ -64,15 +65,24 @@ public class FreshWorksTest {
 			Assert.assertTrue(flag);
 	}
         */
+	
+	public void applicationTitleTest() {
+		System.out.println("Running Title Test...");
+		System.out.println(driver.getTitle());
+		assertEquals(driver.getTitle(), "Home Page - My ASP.NET Application");
+	}
+		
+	/*
 	public void googleTitleTest() {
 		System.out.println("Running Title Test...");
 		System.out.println(driver.getTitle());
 		assertEquals(driver.getTitle(), "Google");
 		//assertEquals(driver.getTitle(), "Google1");
 	}
+	*/
 	
 	
-	@Test(priority = 2)
+	// @Test(priority = 2)
 	/*
 	public void freshWorksTitleTest() {
 		System.out.println("running title test...");
@@ -80,12 +90,13 @@ public class FreshWorksTest {
 		assertEquals(driver.getTitle(), "A fresh approach to customer engagement");
 	}
 	*/
+	/*
 	public void googlelogoTest() {
 		boolean flag = false;
 			flag = driver.findElement(By.cssSelector("#hplogo")).isDisplayed();
 			Assert.assertTrue(flag);
 	}
-
+          */
         /*
 	@Test(priority = 3)
 	public void getFooterLinksTest() {
